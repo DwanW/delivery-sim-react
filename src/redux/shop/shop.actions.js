@@ -18,7 +18,8 @@ const fetchCollectionsFailure = errorMsg => ({
 
 export const fetchCollectionsStartAsync = (query) => {
     const str = query.replace(" ", "%")
-    const apiKey = process.env.REACT_APP_API_KEY;
+    // address this abit later;
+    // const apiKey = process.env.REACT_APP_API_KEY;
 
     return async dispatch => {
         dispatch(fetchCollectionsStart())
@@ -29,8 +30,9 @@ export const fetchCollectionsStartAsync = (query) => {
                 cache: 'no-cache',
                 credentials: 'same-origin',
                 headers: {
+                    "Cookie": "Secure;SameSite=None",
                     'Content-Type': 'application/json',
-                    'user-key': apiKey
+                    'user-key': "f665faf735a7c120f0451152e469358e"
                 }
             });
 
@@ -45,8 +47,9 @@ export const fetchCollectionsStartAsync = (query) => {
                 cache: 'no-cache',
                 credentials: 'same-origin',
                 headers: {
+                    "Cookie": "Secure;SameSite=None",
                     'Content-Type': 'application/json',
-                    'user-key': apiKey
+                    'user-key': "f665faf735a7c120f0451152e469358e"
                 }
             });
 
