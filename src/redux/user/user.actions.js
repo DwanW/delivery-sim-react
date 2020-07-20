@@ -1,6 +1,8 @@
 import UserActionTypes from './user.types';
 import { addSnackBarAlert } from '../snackbar/snackbar.actions';
 
+const BACK_END_URL = 'https://dw-camel.herokuapp.com';
+
 export const signInStart = () => ({
     type: UserActionTypes.SIGN_IN_START,
 })
@@ -44,7 +46,7 @@ export const signInStartAsync = (username, password) => {
         };
 
         try {
-            const response = await fetch("http://127.0.0.1:5000/signin", requestOptions);
+            const response = await fetch(`${BACK_END_URL}/signin`, requestOptions);
             if(response.status === 200){
                 response.json().then(
                 data => {
@@ -75,7 +77,7 @@ export const signUpStartAsync = (username, email, password) => {
         };
 
         try {
-            const response = await fetch("http://127.0.0.1:5000/signup", requestOptions);
+            const response = await fetch(`${BACK_END_URL}/signup`, requestOptions);
             if(response.status === 200){
                 dispatch(signInStartAsync(username, password))
             } else {
@@ -103,7 +105,7 @@ export const checkUserTokenAsync = (token) => {
         };
 
         try {
-            const response = await fetch("http://127.0.0.1:5000/user", requestOptions);
+            const response = await fetch(`${BACK_END_URL}/user`, requestOptions);
             let respData = await response.json().then(data => data)
             console.log(respData)
             if(response.status !== 200){
@@ -142,7 +144,7 @@ export const fetchUserInvoiceStartAsync = (token) => {
         };
 
         try {
-            const response = await fetch("http://127.0.0.1:5000/userinvoice", requestOptions);
+            const response = await fetch(`${BACK_END_URL}/userinvoice`, requestOptions);
             let respData = await response.json().then(data => data)
             console.log(response.status)
             if(response.status === 200){

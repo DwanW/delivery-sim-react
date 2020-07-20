@@ -12,13 +12,15 @@ async function postData(url = '', data = {}) {
     return response.json()
 }
 
+const BACK_END_URL = 'https://dw-camel.herokuapp.com';
+
 export const remapCollection = async (collections) => {
     let newRestaurantList =[];
     let newCollections = {};
     let arr = collections.best_rated_restaurant
     for( let i = 0; i<arr.length; i++){
         let menu = []
-        await postData('http://127.0.0.1:5000/getmenu', arr[i].restaurant.cuisines.split(',').map(str=> str.trim())).then(data => menu.push(data))
+        await postData(`${BACK_END_URL}/getmenu`, arr[i].restaurant.cuisines.split(',').map(str=> str.trim())).then(data => menu.push(data))
         newRestaurantList.push({
             all_reviews_count:arr[i].restaurant.all_reviews_count,
             cuisine_menu: menu[0],

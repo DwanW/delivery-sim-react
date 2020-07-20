@@ -9,6 +9,8 @@ import { addSnackBarAlert } from '../../redux/snackbar/snackbar.actions';
 import CustomButton from '../custom-button/custom-button.component';
 import DaySelector from '../day-selector/day-selector.component';
 
+const BACK_END_URL = 'https://dw-camel.herokuapp.com';
+
 const INITIAL_SCHEDULE = {
     Sunday: [0, 0],
     Monday: [0, 0],
@@ -76,7 +78,7 @@ const DeliveryInfo = ({ cartItems, token, clearOnCheckout, addAlertMessage }) =>
         };
 
         try {
-            const response = await fetch("http://127.0.0.1:5000/checkout", requestOptions);
+            const response = await fetch(`${BACK_END_URL}/checkout`, requestOptions);
             if(response.status === 200){
                 clearOnCheckout();
                 addAlertMessage('CHECK OUT COMPLETE, THANKS FOR SHOPPING');
