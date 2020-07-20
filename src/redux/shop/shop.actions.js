@@ -46,6 +46,7 @@ export const fetchCollectionsStartAsync = (query) => {
                 cache: 'no-cache',
                 credentials: 'same-origin',
                 headers: {
+                    "Cookie": "Secure;SameSite=None",
                     'Content-Type': 'application/json',
                     'user-key': apiKey
                 }
