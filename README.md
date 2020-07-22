@@ -18,4 +18,7 @@
 - **Redux thunk**
 - **Node Sass**
 
+## Data source
 
+- **Location data from Zomato API**
+- **Mock shop item data compiled by myself 😃**
