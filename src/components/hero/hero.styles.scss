@@ -23,7 +23,8 @@
         font-weight: 900;
         padding: 20px 30px;
         transform: translateY(-30px);
-        background-color: rgba(24, 24, 24, 0.226)
+        background-color: rgba(24, 24, 24, 0.226);
+        text-align:center
     }
 
     .main-input {
@@ -65,5 +66,9 @@
                 background-color:rgb(180, 85, 6);
             }
         }
+
+        @media screen and (max-width: 800px){
+            width: 80vw;
+          }
     }
 }

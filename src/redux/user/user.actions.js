@@ -94,7 +94,6 @@ export const signUpStartAsync = (username, email, password) => {
 export const checkUserTokenAsync = (token) => {
     return async dispatch => {
         if(!token){
-            console.log("not sign in yet")
             return;
         }
 
@@ -106,8 +105,6 @@ export const checkUserTokenAsync = (token) => {
 
         try {
             const response = await fetch(`${BACK_END_URL}/user`, requestOptions);
-            let respData = await response.json().then(data => data)
-            console.log(respData)
             if(response.status !== 200){
                 dispatch(signOut());
                 dispatch(addSnackBarAlert("SESSION EXPIRED, PLEASE SIGN IN AGAIN"))
@@ -146,7 +143,6 @@ export const fetchUserInvoiceStartAsync = (token) => {
         try {
             const response = await fetch(`${BACK_END_URL}/userinvoice`, requestOptions);
             let respData = await response.json().then(data => data)
-            console.log(response.status)
             if(response.status === 200){
                 dispatch(fetchInvoiceSuccess(respData));
             } else{

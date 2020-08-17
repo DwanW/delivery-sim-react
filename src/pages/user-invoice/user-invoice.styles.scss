@@ -6,6 +6,9 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     border-radius: 5px;
+    @media screen and (max-width: 800px){
+        width: 95%;
+     }
 
     & h3 {
         padding: 15px 20px;

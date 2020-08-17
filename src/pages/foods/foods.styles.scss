@@ -6,6 +6,10 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     border-radius: 5px;
+    transition:0.3s;
+    @media screen and (max-width: 800px){
+        width: 95%;
+    } 
         
     .restaurant-title {
         font-weight: 300;
@@ -14,7 +18,7 @@
         color: white;
         background-color: orange;
         border-radius: 7px;
-        padding: 5px 10px
+        padding: 5px 10px; 
     }
 
     .foodCollectionContainer{

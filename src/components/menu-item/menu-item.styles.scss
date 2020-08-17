@@ -2,7 +2,7 @@
     height: 240px;
     min-width: 35%;
     overflow: hidden;
-    flex: 1 1;
+    flex: 1 0.5;
     position: relative;
     display: flex;
     align-items: center;
@@ -11,6 +11,9 @@
     box-shadow: 2px 1px 15px 3px grey;
     margin: 0 7.5px 25px;
     border-radius: 3px;
+    @media screen and (max-width: 800px){
+        height: 200px;
+    }  
 
     &::before {
         content:'';
@@ -27,14 +30,14 @@
     }
 
     .menuImgContainer{
-        width: 50%;
+        min-width: 50%;
         height: 100%;
         background-size: cover;
         background-position: center;
     }
 
     .contentContainer{
-        height: 200px;
+        height: 100%;
         padding: 0 25px;
         display: flex;
         flex-direction: column;
@@ -46,11 +49,20 @@
         margin-bottom: 6px;
         font-size: 32px;
         color: #4a4a4a;
+        overflow: hidden;
+        transition: 0.3s;
+        @media screen and (max-width: 800px){
+            font-size: 18px;
+        } 
     }
     .contentSubtitle{
         font-weight: 800;
         font-size: 18px;
-        color: orange
+        color: orange;
+        transition: 0.3s;
+        @media screen and (max-width: 800px){
+            font-size: 15px;
+        }
     }
 
     .reviewContainer{
@@ -58,7 +70,11 @@
         display: flex;
         flex-direction: column;
         align-items: flex-start;
+        transition: 0.3s;
         justify-content: center;
+        @media screen and (max-width: 800px){
+            height: 80px;
+        }
 
         & span{
             padding: 2px 0px;

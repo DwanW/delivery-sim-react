@@ -19,7 +19,6 @@
       }
     }
     @media screen and (max-width: 800px){
-      width: 40vw;
       &:hover {
       .image {
         opacity: unset;
@@ -54,13 +53,20 @@
       margin-bottom: 15px;
       font-size: 24px;
       font-weight: 600;
-      color:rgb(20, 20, 20)
+      color:rgb(20, 20, 20);
+      
+      @media screen and (max-width: 800px){
+        font-size: 18px;
+      } 
     }
     .collectionItemDescription{
       font-size: 20px;
       font-weight: 400;
       color:gray;
       margin-bottom: 25px;
+      @media screen and (max-width: 800px){
+        font-size: 15px;
+      } 
     }
 
     .collectionItemPrice {

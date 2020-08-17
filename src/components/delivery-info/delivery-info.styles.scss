@@ -19,6 +19,9 @@
         margin: 50px 0;
         color: white;
         font-size: 35px;
+        @media screen and (max-width: 800px){
+            font-size: 22px;
+         }
         
         &::before {
             content:'';
@@ -49,11 +52,17 @@
             font-size: 20px;
             border: 1px solid rgb(255, 211, 129);
             transition: 0.4s ease;
+            @media screen and (max-width: 800px){
+                width: 75%;
+             }
 
             &:focus{
                 outline: none;
                 border-color: orange;
-                width: 70%
+                width: 70%;
+                @media screen and (max-width: 800px){
+                    width: 90%;
+                 }
             }
         }
     }

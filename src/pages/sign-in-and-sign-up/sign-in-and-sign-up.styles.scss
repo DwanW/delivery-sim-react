@@ -3,4 +3,8 @@
     width: 850px;
     justify-content: space-between;
     margin: 30px auto;
+    @media screen and (max-width: 850px){
+        flex-direction: column;
+        width: 425px;
+     }
 }

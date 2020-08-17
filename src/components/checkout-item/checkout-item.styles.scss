@@ -17,6 +17,10 @@
 
     .textContainer{
       width: 23%;
+      overflow: hidden;
+      @media screen and (max-width: 800px){
+        font-size: 14px;
+     }
     }
 
     .quantityContainer{

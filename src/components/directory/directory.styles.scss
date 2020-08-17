@@ -6,6 +6,10 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     border-radius: 5px;
+    transition: 0.3s;
+    @media screen and (max-width: 800px){
+        width: 95%;
+    }  
 
     .locationTitle {
         color: gray;
